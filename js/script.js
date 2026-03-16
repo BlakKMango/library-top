@@ -1,4 +1,4 @@
-const libraryGrid = document.querySelector(".library-grid";)
+const libraryGrid = document.querySelector(".library-grid");
 
 const myLibrary = [];
 
@@ -16,7 +16,7 @@ function addBookToLibrary(title, author, datePublished, genre) {
     myLibrary.push(new Book(title, author, datePublished, genre))
     myLibrary.sort((a, b) => a.title.localeCompare(b.title));
 
-    displayLibrary()
+    displayBooks()
 }
 
 function createBookCard(book) {
@@ -27,21 +27,22 @@ function createBookCard(book) {
 
     bookCard.innerHTML = `
     <img src="${imgSrc}" alt="${book.title} cover">
+    <div class="book-info">
         <h2>${book.title}</h2>
         <p><strong>Author:</strong> ${book.author}</p>
         <p><strong>Published:</strong> ${book.datePublished}</p>
         <p><strong>Genre:</strong> ${book.genre}</p>
+    </div>
     `;
 
     libraryGrid.appendChild(bookCard)
 }
 
-function displayLibrary() {
+function displayBooks() {
+    libraryGrid.innerHTML = "";
     myLibrary.forEach((book) => {
-        //create a new book element in the DOM
-
+        createBookCard(book)
     })
 }
 
 
-addBookToLibrary
