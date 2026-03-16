@@ -1,3 +1,5 @@
+const libraryGrid = document.querySelector(".library-grid";)
+
 const myLibrary = [];
 
 function Book(title, author, datePublished, genre) {
@@ -9,10 +11,6 @@ function Book(title, author, datePublished, genre) {
     this.id = crypto.randomUUID();
 }
 
-Book.prototype.info = function() {
-    return `${this.title} by ${this.author} (${this.published}) - ${this.genre}`;
-}
-
 function addBookToLibrary(title, author, datePublished, genre) {
     // take params, create a book then store it in the array
     myLibrary.push(new Book(title, author, datePublished, genre))
@@ -21,10 +19,27 @@ function addBookToLibrary(title, author, datePublished, genre) {
     displayLibrary()
 }
 
+function createBookCard(book) {
+    const bookCard = document.createElement("div")
+    bookCard.classList.add("book")
+
+    const imgSrc = `../img/${book.title.replace(/\s/g, '').toLowerCase()}.jpeg`
+
+    bookCard.innerHTML = `
+    <img src="${imgSrc}" alt="${book.title} cover">
+        <h2>${book.title}</h2>
+        <p><strong>Author:</strong> ${book.author}</p>
+        <p><strong>Published:</strong> ${book.datePublished}</p>
+        <p><strong>Genre:</strong> ${book.genre}</p>
+    `;
+
+    libraryGrid.appendChild(bookCard)
+}
+
 function displayLibrary() {
     myLibrary.forEach((book) => {
         //create a new book element in the DOM
-        
+
     })
 }
 
