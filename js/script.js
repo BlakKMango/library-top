@@ -2,31 +2,30 @@ const libraryGrid = document.querySelector(".library-grid");
 
 const myLibrary = [];
 
-function Book(title, author, datePublished, genre) {
+function Book(title, author, datePublished, genre, isbn) {
     //create a constructor
     this.title = title;
     this.author = author;
     this.datePublished = datePublished;
     this.genre = genre;
-    this.id = crypto.randomUUID();
+    this.isbn = isbn;
 }
 
-function addBookToLibrary(title, author, datePublished, genre) {
+function addBookToLibrary(title, author, datePublished, genre, isbn) {
     // take params, create a book then store it in the array
-    myLibrary.push(new Book(title, author, datePublished, genre))
+    myLibrary.push(new Book(title, author, datePublished, genre, isbn))
     myLibrary.sort((a, b) => a.title.localeCompare(b.title));
 
     displayBooks()
 }
 
-function createBookCard(book) {
+
+async function createBookCard(book) {
     const bookCard = document.createElement("div")
     bookCard.classList.add("book")
-
-    const imgSrc = `../img/${book.title.replace(/\s/g, '').toLowerCase()}.jpeg`
-
+    bookCard.dataset.id = book.isbn
     bookCard.innerHTML = `
-    <img src="${imgSrc}" alt="${book.title} cover">
+    <img src="" alt="${book.title} cover">
     <div class="book-info">
         <h2>${book.title}</h2>
         <p><strong>Author:</strong> ${book.author}</p>
@@ -34,8 +33,14 @@ function createBookCard(book) {
         <p><strong>Genre:</strong> ${book.genre}</p>
     </div>
     `;
-
     libraryGrid.appendChild(bookCard)
+
+    if (book.isbn) {
+        const img = bookCard.querySelector("img");
+        const cleanISBN = String(book.isbn).replace(/[-\s]/g, "");
+        img.setAttribute("src", `https://covers.openlibrary.org/b/isbn/${cleanISBN}-L.jpg`)
+        img.onerror = () => { img.src = "../img/placeholder.jpeg"; };
+    }
 }
 
 function displayBooks() {
