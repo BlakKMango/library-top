@@ -104,7 +104,31 @@ dialog {
         width: 80px;
         padding: 8px;
         border-radius: 4px;
-        border: 1px solid grey;
+        border: 1px solid rgb(133, 0, 242);
+        background-color: rgb(133, 0, 242);
+        color: white;
+        font-weight: bold;
     }
 
+    .submit-button:hover {
+        background-color: greenyellow;
+        color: rgb(133, 0, 242);
+        font-weight: bold;
+        border: none;
+    }
+
+    .close-modal:hover {
+        background-color: red;
+        color: whitesmoke;
+        font-weight: bold;
+        border: none;
+    }
+
+    input, select {
+        box-sizing: border-box;
+        height: 32px;
+        padding: 4px;
+        border-radius: 4px;
+        border: 1px solid grey;
+    }
 }
