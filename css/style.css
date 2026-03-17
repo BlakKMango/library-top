@@ -61,7 +61,7 @@ h1 {
 }
 
 
-dialog {
+dialog[open] {
     display: flex;
     flex-direction: column;
     position: relative;

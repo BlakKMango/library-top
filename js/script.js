@@ -1,4 +1,7 @@
 const libraryGrid = document.querySelector(".library-grid");
+const addBookModal = document.querySelector("#modal");
+const closeModalButton = document.querySelector("#close-modal");
+const openModalButton = document.querySelector("#open-modal");
 
 const myLibrary = [];
 
@@ -50,4 +53,11 @@ function displayBooks() {
     })
 }
 
+function openModal() {
+    addBookModal.showModal();
+}
 
+
+
+
+openModalButton.addEventListener("click", openModal)
