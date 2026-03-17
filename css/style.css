@@ -134,3 +134,7 @@ dialog[open] {
         color: black;
     }
 }
+
+dialog::backdrop {
+   backdrop-filter: blur(10px);
+}

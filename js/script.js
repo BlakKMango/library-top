@@ -2,6 +2,7 @@ const libraryGrid = document.querySelector(".library-grid");
 const addBookModal = document.querySelector("#modal");
 const closeModalButton = document.querySelector("#close-modal");
 const openModalButton = document.querySelector("#open-modal");
+const newBookForm = document.querySelector(".new-book-form");
 
 const myLibrary = [];
 
@@ -53,6 +54,7 @@ function displayBooks() {
     })
 }
 
+
 //------------Modal controls -------------//
 function openModal() {
     addBookModal.showModal();
@@ -67,3 +69,12 @@ function closeModal() {
 
 openModalButton.addEventListener("click", openModal)
 closeModalButton.addEventListener("click", closeModal)
+newBookForm.addEventListener("submit", (e) => {
+    addBookToLibrary(
+        e.target.title.value,
+        e.target.author.value,
+        e.target.year.value,
+        e.target.genre.value,
+        e.target.isbn.value
+    )
+})
