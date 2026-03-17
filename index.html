@@ -12,5 +12,45 @@
     <div class="library-grid">
         <!-- Here we need to display books via JS -->
     </div>
+    <dialog class="modal" id="modal">
+        <h2>Add a new book to the library</h2>
+        <form class="new-book-form" id="new-book-form">
+            <input type="text" name="title" id="title" placeholder="Title">
+            <input type="text" name="author" id="author" placeholder="Author">
+            <input type="tel" name="isbn" id="isbn" placeholder="ISBN number">
+            <input type="tel" name="year" id="year" placeholder="Year published">
+            <select name="genre" id="genre">
+                <option value="" disabled selected hidden>Select a genre</option>
+                <option value="action-adventure">Action & Adventure</option>
+                <option value="biography">Biography & Memoir</option>
+                <option value="childrens">Children's</option>
+                <option value="classics">Classics</option>
+                <option value="comic-graphic">Comic & Graphic Novel</option>
+                <option value="crime">Crime</option>
+                <option value="dystopian">Dystopian</option>
+                <option value="fantasy">Fantasy</option>
+                <option value="historical-fiction">Historical Fiction</option>
+                <option value="horror">Horror</option>
+                <option value="humour">Humour</option>
+                <option value="literary-fiction">Literary Fiction</option>
+                <option value="mystery">Mystery</option>
+                <option value="non-fiction">Non-Fiction</option>
+                <option value="paranormal">Paranormal</option>
+                <option value="philosophy">Philosophy</option>
+                <option value="poetry">Poetry</option>
+                <option value="psychological-thriller">Psychological Thriller</option>
+                <option value="romance">Romance</option>
+                <option value="sci-fi">Science Fiction</option>
+                <option value="self-help">Self-Help</option>
+                <option value="short-stories">Short Stories</option>
+                <option value="spirituality">Spirituality</option>
+                <option value="sports">Sports</option>
+                <option value="thriller">Thriller</option>
+                <option value="travel">Travel</option>
+                <option value="true-crime">True Crime</option>
+                <option value="young-adult">Young Adult</option>
+            </select>
+        </form>
+    </dialog>
 </body>
 </html>
