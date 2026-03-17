@@ -3,6 +3,12 @@ body {
     width: auto;
 }
 
+.header {
+    display: flex;
+    justify-content: flex-end;
+    margin: 24px;
+}
+
 h1 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 48px;
@@ -33,6 +39,27 @@ h1 {
     border-radius: 16px;
     box-shadow: 1px 1px 8px 2px #B6B6B6;
     background-color: rgba(255, 255, 255, 0.415);
+
+    .card-button-wrap {
+        display: flex;
+        width: 90%;
+        justify-content: space-between;
+        margin-top: 24px;
+    }
+
+    .mark-read {
+        background: none;
+        border: none;
+    }
+
+    .delete-book {
+        background: none;
+        border: none;
+    }
+
+    .delete-book > img {
+        width: 100%;
+    }
 }
 
 .book-info {

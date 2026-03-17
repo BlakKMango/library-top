@@ -4,6 +4,7 @@ const closeModalButton = document.querySelector("#close-modal");
 const openModalButton = document.querySelector("#open-modal");
 const newBookForm = document.querySelector("#new-book-form");
 
+
 const myLibrary = [];
 
 function Book(title, author, datePublished, genre, isbn) {
@@ -23,7 +24,6 @@ function addBookToLibrary(title, author, datePublished, genre, isbn) {
     displayBooks()
 }
 
-
 async function createBookCard(book) {
     const bookCard = document.createElement("div")
     bookCard.classList.add("book")
@@ -36,8 +36,15 @@ async function createBookCard(book) {
         <p><strong>Published:</strong> ${book.datePublished}</p>
         <p><strong>Genre:</strong> ${book.genre}</p>
     </div>
+    <div class="card-button-wrap">
+        <button class="delete-book"><img src="../img/trash_icon.svg"></button>
+        <button class="mark-read">Mark as read</button>
+    </div>
     `;
     libraryGrid.appendChild(bookCard)
+
+    const deleteButton = bookCard.querySelector(".delete-book");
+    deleteButton.addEventListener("click", () => deleteBookFromLibrary(deleteButton.dataset.id));
 
     if (book.isbn) {
         const img = bookCard.querySelector("img");
@@ -54,6 +61,13 @@ function displayBooks() {
     })
 }
 
+function deleteBookFromLibrary(isbn) {
+    //Find the book in the array
+    const index = myLibrary.findIndex(book => book.isbn === isbn);
+    myLibrary.splice(index, 1)
+    displayBooks();
+}
+
 
 //------------Modal controls -------------//
 function openModal() {
@@ -66,7 +80,7 @@ function closeModal() {
 
 
 
-
+//--------------EVENT LISTENERS-----------//
 openModalButton.addEventListener("click", openModal)
 closeModalButton.addEventListener("click", closeModal)
 newBookForm.addEventListener("submit", (e) => {
