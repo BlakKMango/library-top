@@ -53,11 +53,17 @@ function displayBooks() {
     })
 }
 
+//------------Modal controls -------------//
 function openModal() {
     addBookModal.showModal();
+}
+
+function closeModal() {
+    addBookModal.close();
 }
 
 
 
 
 openModalButton.addEventListener("click", openModal)
+closeModalButton.addEventListener("click", closeModal)
