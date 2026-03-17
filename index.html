@@ -12,8 +12,8 @@
     <div class="library-grid">
         <!-- Here we need to display books via JS -->
     </div>
-    <dialog class="modal" id="modal">
-        <button class="close-modal" id="close-modal">Cancel</button>
+    <dialog open class="modal" id="modal">
+        
         <h2>Add a new book to the library</h2>
         <form class="new-book-form" id="new-book-form">
             <input type="text" name="title" id="title" placeholder="Title">
@@ -51,7 +51,10 @@
                 <option value="true-crime">True Crime</option>
                 <option value="young-adult">Young Adult</option>
             </select>
-            <button type="submit">Add</button>
+            <div class="button-wrap">
+                <button class="submit-button" type="submit">Add</button>
+                <button class="close-modal" id="close-modal">Cancel</button>
+            </div>
         </form>
     </dialog>
 </body>
