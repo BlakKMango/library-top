@@ -47,7 +47,6 @@ function createBookCard(book) {
         <p><strong>Genre:</strong> ${book.genre}</p>
     </div>
     <div class="card-button-wrap">
-        <button class="delete-book"><img src="../img/trash_icon.svg"></button>
     </div>
     `;
     libraryGrid.appendChild(bookCard)
