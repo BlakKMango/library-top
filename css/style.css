@@ -216,21 +216,26 @@ dialog[open] {
         width: 80px;
         padding: 8px;
         border-radius: 4px;
-        border: 1px solid rgb(133, 0, 242);
-        background-color: rgb(133, 0, 242);
+        border: 1px solid darkslateblue;
+        background-color: darkslateblue;
         color: white;
         font-weight: bold;
     }
 
+    .close-modal {
+        color: #FF4444;
+        background: transparent;
+        border: 1px solid #FF4444;
+    }
+
     .submit-button:hover {
-        background-color: greenyellow;
-        color: rgb(133, 0, 242);
+        background-color: darkturquoise;
         font-weight: bold;
         border: none;
     }
 
     .close-modal:hover {
-        background-color: red;
+        background-color: #FF4444;
         color: whitesmoke;
         font-weight: bold;
         border: none;
@@ -243,6 +248,7 @@ dialog[open] {
         border-radius: 4px;
         border: 1px solid black;
         color: black;
+        font-family: var(--urbanist);
     }
 }
 
