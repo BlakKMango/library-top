@@ -81,7 +81,7 @@ function renderDelete(book, bookCard) {
   const deleteButton = document.createElement("button");
   deleteButton.classList.add("delete-book");
   const icon = document.createElement("img");
-  icon.src = "../img/trash_icon.svg";
+  icon.src = "/library-top/img/trash_icon.svg";
   deleteButton.appendChild(icon);
   cardButtons.appendChild(deleteButton);
   deleteButton.addEventListener("click", () => {
