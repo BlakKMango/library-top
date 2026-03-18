@@ -14,6 +14,16 @@ function Book(title, author, datePublished, genre, isbn) {
     this.datePublished = datePublished;
     this.genre = genre;
     this.isbn = isbn;
+    this.read = false;
+}
+
+Book.prototype.toggleRead = function() {
+    this.read = !this.read
+}
+
+Book.prototype.deleteBook = function() {
+    const index = myLibrary.indexOf(this);
+    myLibrary.splice(index, 1);
 }
 
 function addBookToLibrary(title, author, datePublished, genre, isbn) {
@@ -24,7 +34,7 @@ function addBookToLibrary(title, author, datePublished, genre, isbn) {
     displayBooks()
 }
 
-async function createBookCard(book) {
+function createBookCard(book) {
     const bookCard = document.createElement("div")
     bookCard.classList.add("book")
     bookCard.dataset.id = book.isbn
@@ -38,12 +48,16 @@ async function createBookCard(book) {
     </div>
     <div class="card-button-wrap">
         <button class="delete-book"><img src="../img/trash_icon.svg"></button>
-        <button class="mark-read">Mark as read</button>
     </div>
     `;
     libraryGrid.appendChild(bookCard)
 
+    renderRead(book, bookCard)
+
+    renderDelete(book, bookCard)
+
     const deleteButton = bookCard.querySelector(".delete-book");
+    deleteButton.dataset.id = book.isbn;
     deleteButton.addEventListener("click", () => deleteBookFromLibrary(deleteButton.dataset.id));
 
     if (book.isbn) {
@@ -52,6 +66,31 @@ async function createBookCard(book) {
         img.setAttribute("src", `https://covers.openlibrary.org/b/isbn/${cleanISBN}-L.jpg`)
         img.onerror = () => { img.src = "../img/placeholder.jpeg"; };
     }
+
+    
+}
+
+function renderRead(book, bookCard) {
+    const cardButtons = bookCard.querySelector(".card-button-wrap");
+    const readButton = document.createElement("button");
+    readButton.classList.add("mark-read");
+    readButton.textContent = book.read ? "Finished" : "Mark as read";
+    readButton.dataset.id = book.isbn
+    cardButtons.appendChild(readButton);
+
+    readButton.addEventListener("click", () => {
+        book.toggleRead();
+        readButton.textContent = book.read ? "Finished" : "Mark as read";
+    })
+}
+
+function renderDelete(book, bookCard) {
+    const deleteButton = bookCard()
+
+    readButton.addEventListener("click", () => {
+        book.toggleRead();
+        readButton.textContent = book.read ? "Finished" : "Mark as read";
+    })
 }
 
 function displayBooks() {
