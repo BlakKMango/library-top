@@ -56,18 +56,12 @@ function createBookCard(book) {
 
     renderDelete(book, bookCard)
 
-    const deleteButton = bookCard.querySelector(".delete-book");
-    deleteButton.dataset.id = book.isbn;
-    deleteButton.addEventListener("click", () => deleteBookFromLibrary(deleteButton.dataset.id));
-
     if (book.isbn) {
         const img = bookCard.querySelector("img");
         const cleanISBN = String(book.isbn).replace(/[-\s]/g, "");
         img.setAttribute("src", `https://covers.openlibrary.org/b/isbn/${cleanISBN}-L.jpg`)
         img.onerror = () => { img.src = "../img/placeholder.jpeg"; };
-    }
-
-    
+    }  
 }
 
 function renderRead(book, bookCard) {
@@ -81,15 +75,16 @@ function renderRead(book, bookCard) {
     readButton.addEventListener("click", () => {
         book.toggleRead();
         readButton.textContent = book.read ? "Finished" : "Mark as read";
+        readButton.classList.toggle("finished");
     })
 }
 
 function renderDelete(book, bookCard) {
-    const deleteButton = bookCard()
+    const deleteButton = bookCard.querySelector(".delete-book")
 
-    readButton.addEventListener("click", () => {
-        book.toggleRead();
-        readButton.textContent = book.read ? "Finished" : "Mark as read";
+    deleteButton.addEventListener("click", () => {
+        book.deleteBook();
+        displayBooks();
     })
 }
 
