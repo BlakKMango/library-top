@@ -132,18 +132,18 @@ newBookForm.addEventListener("submit", (e) => {
 
 
 
-addBookToLibrary("A Little Life", "Hanya Yanagihara", "2015", "literary-fiction", "9780804172707");
 addBookToLibrary("All the Light We Cannot See", "Anthony Doerr", "2014", "historical-fiction", "9781476746586");
-addBookToLibrary("Anxious People", "Fredrik Backman", "2019", "literary-fiction", "9781982121952");
+addBookToLibrary("Anxious People", "Fredrik Backman", "2019", "literary-fiction", "9781405930253");
 addBookToLibrary("Beautiful World, Where Are You", "Sally Rooney", "2021", "literary-fiction", "9780571365425");
 addBookToLibrary("Conversations with Friends", "Sally Rooney", "2017", "literary-fiction", "9780571333134");
 addBookToLibrary("Crying in H Mart", "Michelle Zauner", "2021", "biography", "9780525657743");
 addBookToLibrary("Daisy Jones and The Six", "Taylor Jenkins Reid", "2019", "literary-fiction", "9781524798628");
-addBookToLibrary("Intermezzo", "Sally Rooney", "2024", "literary-fiction", "9780374611651");
 addBookToLibrary("Malibu Rising", "Taylor Jenkins Reid", "2021", "literary-fiction", "9781524798659");
 addBookToLibrary("Normal People", "Sally Rooney", "2018", "literary-fiction", "9780571334650");
-addBookToLibrary("Sunburn", "Chloe Michelle Hooper", "2024", "literary-fiction", "9781761470547");
+addBookToLibrary("Sunburn", "Chloe Michelle Hooper", "2024", "literary-fiction", "9780857308412");
 addBookToLibrary("The Handmaid's Tale", "Margaret Atwood", "1985", "dystopian", "9780385490818");
 addBookToLibrary("The Hunger Games", "Suzanne Collins", "2008", "dystopian", "9780439023481");
 addBookToLibrary("The Midnight Library", "Matt Haig", "2020", "literary-fiction", "9780525559474");
-addBookToLibrary("Where the Crawdads Sing", "Delia Owens", "2018", "literary-fiction", "9780735224292");
+addBookToLibrary("Where the Crawdads Sing", "Delia Owens", "2018", "literary-fiction", "9783453424012");
+addBookToLibrary("The Seven Husbands of Evelyn Hugo", "Taylor Jenkins Reid", "2017", "literary-fiction", "9783548066738");
+addBookToLibrary("Rubyfruit Jungle", "Rita Mae Brown", "1973", "literary-fiction", "9780553278866");
