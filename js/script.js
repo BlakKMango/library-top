@@ -50,10 +50,8 @@ function createBookCard(book) {
     </div>
     `;
     libraryGrid.appendChild(bookCard)
-
-    renderRead(book, bookCard)
-
     renderDelete(book, bookCard)
+    renderRead(book, bookCard)
 
     if (book.isbn) {
         const img = bookCard.querySelector("img");
