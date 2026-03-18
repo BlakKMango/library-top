@@ -80,12 +80,17 @@ function renderRead(book, bookCard) {
 }
 
 function renderDelete(book, bookCard) {
-    const deleteButton = bookCard.querySelector(".delete-book")
-
-    deleteButton.addEventListener("click", () => {
-        book.deleteBook();
-        displayBooks();
-    })
+  const cardButtons = bookCard.querySelector(".card-button-wrap");
+  const deleteButton = document.createElement("button");
+  deleteButton.classList.add("delete-book");
+  const icon = document.createElement("img");
+  icon.src = "../img/trash_icon.svg";
+  deleteButton.appendChild(icon);
+  cardButtons.appendChild(deleteButton);
+  deleteButton.addEventListener("click", () => {
+    book.deleteBook();
+    displayBooks();
+  });
 }
 
 function displayBooks() {
