@@ -8,7 +8,7 @@ This project was completed as part of The Odin Project full stack development co
 
 It lets the user add and remove books from their personal library, and using the unique ISBN reference for the book, automatically fetches the correct book cover image. 
 
-Live demo: [link] (https://blakkmango.github.io/library-top/)
+Live demo: [link](https://blakkmango.github.io/library-top/)
 
 It does not have any type of storage at present as this was outside the scope of this project.
 
