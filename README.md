@@ -20,3 +20,4 @@ It does not have any type of storage at present as this was outside the scope of
 - Handling form submission with `event.preventDefault()`
 - Creating, opening, and closing modals
 - Form creation
+- Using classes
